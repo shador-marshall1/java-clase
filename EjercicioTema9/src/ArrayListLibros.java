@@ -68,5 +68,6 @@ public class ArrayListLibros {
   }
  public void ordernarTitulo () {
 	 Collections.sort(lista, new TituloComparator());
+	
  }
 }
