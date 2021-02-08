@@ -38,6 +38,7 @@ public class Libro {
   
   public String dameTitulo() { return titulo; }
   public Persona dameAutor() { return autor; }
+  public int damePaginas ()  { return paginas; }
   
 
   
