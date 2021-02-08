@@ -1,5 +1,7 @@
 
       import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 
 // Repaso ArrayList
@@ -17,20 +19,7 @@ public class ArrayListLibros {
   public boolean vacia() { return lista.isEmpty(); }
 
   public int length() { return lista.size(); }
-/*
-  public boolean insertarOrden(Libro p) {
-  
-    int i=0;
-	boolean encontrado=false;
-    while ((i<lista.size()) && (!encontrado)){
-    	encontrado=(lista.get(i).dameTitulo().compareTo(p.dameTitulo()))>0;
-    	if (!encontrado) i++;
-    }	
-    lista.add(i, p);
-    return true;
-  }
-  */
-  
+ 
   public int buscar(String parte) { // Devuelve índice, no posición
   
     
@@ -68,21 +57,7 @@ public class ArrayListLibros {
     if((pos < 1) || (pos > lista.size())) return null;
     return lista.get(pos-1);
   }
-/*
-  public String toString() {
-    String cad = lista.size() + " Elementos de la lista:\n\n";
-    for(int i = 0; i < lista.size(); i++)
-      cad += lista.get(i) + "\n-----------------------------------------------\n";
-    return cad;
-  }
-  */
- /* public String toString() {
-	  String cad = lista.size() + " Elementos de la lista:\n\n";
-	  for (Libro l: lista)
-		  cad += l + "\n-----------------------------------------------\n";
-	  return cad;
-  }
- */
+ 
   public String toString() {
 	  String cad = lista.size() + " Elementos de la lista:\n\n";
 	  Iterator it = lista.iterator(); 
@@ -91,5 +66,7 @@ public class ArrayListLibros {
 	  }
 	  return cad;
   }
- 
+ public void ordernarTitulo () {
+	 Collections.sort(lista, new TituloComparator());
+ }
 }

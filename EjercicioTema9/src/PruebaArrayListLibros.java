@@ -14,25 +14,7 @@ public class PruebaArrayListLibros {
                          "0-13-031997-X",546,3,"McGraw-Hill","Madrid-España",f1);
     
                      
-   /* 
-    ArrayListLibros a= new ArrayListLibros();
-    a.insertarOrden(l1);
-    a.insertarOrden(l2);
-    a.insertarOrden(l3);
-  
-  System.out.println(a);
-    */
- /*   int indice=a.buscar("AVANZADO");
-    System.out.println(indice+1);
-    if (indice != -1)  {
-    	            l3 = a.recuperar(indice+1);
-    	            System.out.println(l3);
-                }
-    else
-     System.out.println("No encontrado"); 
-    
-  /*  a.eliminar(2);
-    System.out.println("Tras eliminar el 2 \n");
-    System.out.println(a);*/
+
   }
+  
 }
