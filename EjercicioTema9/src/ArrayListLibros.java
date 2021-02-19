@@ -65,9 +65,9 @@ public class ArrayListLibros {
 		  cad += it.next() + "\n-----------------------------------------------\n";
 	  }
 	  return cad;
-  }
+  }/*
  public void ordernarTitulo () {
 	 Collections.sort(lista, new TituloComparator());
+	 */
 	
  }
-}
