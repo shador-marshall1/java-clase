@@ -1,0 +1,17 @@
+package ejercicios;
+
+import java.io.*;
+
+public class Ej1 {
+
+	public static void main(String[] args) throws IOException {
+			BufferedReader fichero = new BufferedReader (new FileReader ("ficheros\\Ej1.txt"));
+			String contador=null;
+			while (fichero.readLine() != null) {
+				contador = contador + fichero.readLine();
+				System.out.println(contador);
+				
+			}
+	}
+
+}

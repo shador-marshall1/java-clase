@@ -1,0 +1,10 @@
+package ficheros;
+
+public class PruebaArgumentos {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

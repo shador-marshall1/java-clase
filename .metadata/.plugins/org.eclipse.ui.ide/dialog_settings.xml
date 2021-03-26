@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="d:\perfiles\dam1alu13\Downloads\Tema12_Dia2.zip"/>
+			<item value="d:\perfiles\dam1alu13\Downloads\Tema12_Lectura_Escritura_Informacion-20210322T084213Z-001\Tema12_Lectura_Escritura_Informacion\12_01b_FileToStringJava8_ejemplos.zip"/>
+			<item value="d:\perfiles\dam1alu13\Downloads\Tema11_Herencia_interfaces_y_polimorfismo-20210322T084214Z-001\Tema11_Herencia_interfaces_y_polimorfismo\Tema11.zip"/>
+			<item value="d:\perfiles\dam1alu13\Downloads\Tema10_Algunas_clases_de_utilidad-20210322T084218Z-001\Tema10_Algunas_clases_de_utilidad\ProyectosTema10.zip"/>
+			<item value="d:\perfiles\dam1alu13\Downloads\Tema9_Colecciones_III_y_Excepciones-20210322T084219Z-001\Tema9_Colecciones_III_y_Excepciones\Tema9_TreeSet.zip"/>
+			<item value="d:\perfiles\dam1alu13\Downloads\Tema9_Colecciones_III_y_Excepciones-20210322T084219Z-001\Tema9_Colecciones_III_y_Excepciones\Tema9_Ordenando_Colecciones.zip"/>
+			<item value="d:\perfiles\dam1alu13\Downloads\Tema9_Colecciones_III_y_Excepciones-20210322T084219Z-001\Tema9_Colecciones_III_y_Excepciones\Tema9_mapas.zip"/>
+			<item value="d:\perfiles\dam1alu13\Downloads\Tema9_Colecciones_III_y_Excepciones-20210322T084219Z-001\Tema9_Colecciones_III_y_Excepciones\Tema9_errores.zip"/>
+		</list>
+	</section>
+</section>
