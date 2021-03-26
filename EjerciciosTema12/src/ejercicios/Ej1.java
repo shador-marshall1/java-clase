@@ -13,10 +13,11 @@ public class Ej1 {
 		bf = new BufferedReader (fr);
 		linea = bf.readLine();
 		while (linea !=null) {
-			System.out.println(linea);
+			System.out.println(linea);double
+			pd = Double.parseDouble(linea);
 			linea = bf.readLine();
 		}
-		double pd = Double.parseDouble(linea);
+		
 		fr.close();
 		bf.close();
 }
