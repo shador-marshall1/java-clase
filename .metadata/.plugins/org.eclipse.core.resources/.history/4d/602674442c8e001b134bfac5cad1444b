@@ -1,0 +1,18 @@
+package ejercicios;
+import java.io.*;
+import java.util.StringTokenizer;
+public class Ej3 {
+
+	public static void main(String[] args) throws IOException {
+		FileInputStream ed1 = new FileInputStream("ficheros/Ej3.txt");
+		int contador = 0;
+		int aux= 0;
+		int cosa= 0;
+		StringTokenizer st = new StringTokenizer ("ficheros/Ej3.txt");
+		while (st.hasMoreTokens()) {
+			System.out.println(st.nextToken());
+		}
+
+}
+
+}
