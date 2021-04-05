@@ -82,13 +82,14 @@ public class Ej10 implements Serializable{
 				+ "]";
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		//ObjectOutputStream oos = new ObjectOutputStream (new FileOutputStream("ficheros/ventas.dat"));
 		FileOutputStream fos = null;
         ObjectOutputStream salida = null;
         Ej10 p;
         Scanner sc = new Scanner (System.in);
          try {
-        	 fos = new FileOutputStream ("ficheros/ventas.dat");
+        	 fos = new FileOutputStream ("ficheros\\ventas.dat");
         	 salida = new ObjectOutputStream (fos);
         	 System.out.println("Introduzca el dato del cliente");
         	 
@@ -114,7 +115,6 @@ public class Ej10 implements Serializable{
         	 System.out.println(e.getMessage());
          }
 	}
-
 
 	
 }

@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="d:\perfiles\dam1alu13\Downloads\Tema13_Interfaces_gráficas_sencillas-20210405T081717Z-001\Tema13_Interfaces_gráficas_sencillas\Tema13_InterfacesGraficasSencillas.zip"/>
 			<item value="d:\perfiles\dam1alu13\Downloads\Tema12_Dia2.zip"/>
 			<item value="d:\perfiles\dam1alu13\Downloads\Tema12_Lectura_Escritura_Informacion-20210322T084213Z-001\Tema12_Lectura_Escritura_Informacion\12_01b_FileToStringJava8_ejemplos.zip"/>
 			<item value="d:\perfiles\dam1alu13\Downloads\Tema11_Herencia_interfaces_y_polimorfismo-20210322T084214Z-001\Tema11_Herencia_interfaces_y_polimorfismo\Tema11.zip"/>
@@ -15,5 +16,12 @@
 			<item value="d:\perfiles\dam1alu13\Downloads\Tema9_Colecciones_III_y_Excepciones-20210322T084219Z-001\Tema9_Colecciones_III_y_Excepciones\Tema9_mapas.zip"/>
 			<item value="d:\perfiles\dam1alu13\Downloads\Tema9_Colecciones_III_y_Excepciones-20210322T084219Z-001\Tema9_Colecciones_III_y_Excepciones\Tema9_errores.zip"/>
 		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="466"/>
+		<item key="DIALOG_Y_ORIGIN" value="52"/>
+		<item key="DIALOG_WIDTH" value="525"/>
+		<item key="DIALOG_HEIGHT" value="580"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>

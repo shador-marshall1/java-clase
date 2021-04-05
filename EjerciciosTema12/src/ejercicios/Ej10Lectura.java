@@ -11,11 +11,11 @@ public class Ej10Lectura {
         Ej10 p;
         
         try {
-
-            fis = new FileInputStream("ficheros/ventas.dat");
+        	
+            fis = new FileInputStream("ficheros\\ventas.dat");
             entrada = new ObjectInputStream(fis);
             p = (Ej10) entrada.readObject(); 
-            System.out.println(p.toString());
+            System.out.println(p);
             //System.out.println(p.getNif() + " " + p.getNombre() + " " + p.getEdad()+ p.getDireccion()+ p.getTelefono());
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
