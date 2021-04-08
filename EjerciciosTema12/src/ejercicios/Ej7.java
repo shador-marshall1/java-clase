@@ -11,7 +11,7 @@ public class Ej7 {
 			DataOutputStream dataOS=new DataOutputStream(fileout);
 			double numeroAleatorio = (double) (Math.random()*23+1);
 			String dia [] = {"10 Agosto 2019"};
-			Double temperaturas [] = {numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio, numeroAleatorio,};
+			Double temperaturas [] = {,};
 			for (int i=0; i< dia.length; i++) {
 				dataOS.writeUTF(dia[i]);
 			}

@@ -7,114 +7,85 @@ public class Ej10 implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private static String Nombre;
-	private static String Telefono;
-	private static String Direccion;
-	private static String Nif;
-	private static int Edad;
-	private static boolean Moroso;
+	private final long serialVersionUID = 1L;
+	private String Nombre;
+	private String Telefono;
+	private String Direccion;
+	private String Nif;
+	private int Edad;
+	private boolean Moroso;
 	
 	public Ej10() {
 	}
 
-	public Ej10(String nombre, String telefono, String direccion, String nif, int edad) {
+	public Ej10(String nombre, String telefono, String direccion, String nif, int edad, Boolean Moroso) {
 		super();
-		Nombre = nombre;
-		Telefono = telefono;
-		Direccion = direccion;
-		Nif = nif;
-		Edad = edad;
+		this.Nombre = nombre;
+		this.Telefono = telefono;
+		this.Direccion = direccion;
+		this.Nif = nif;
+		this.Edad = edad;
+		this.Moroso= Moroso;
 	}
 
 	public String getNombre() {
 		return Nombre;
 	}
 
-	public void setNombre(String nombre) {
-		Nombre = nombre;
+	public void setNombre(Scanner s) {
+		System.out.println("Introduce el nombre: ");
+		this.Nombre = s.nextLine();
 	}
 
 	public String getTelefono() {
 		return Telefono;
 	}
 
-	public void setTelefono(String telefono) {
-		Telefono = telefono;
+	public void setTelefono(Scanner s) {
+		System.out.println("Escriba el teléfono: ");
+		this.Telefono = s.nextLine();
 	}
 
 	public String getDireccion() {
 		return Direccion;
 	}
 
-	public void setDireccion(String direccion) {
-		Direccion = direccion;
+	public void setDireccion(Scanner s) {
+		System.out.println("Escribe la dirección: ");
+		this.Direccion = s.nextLine();
 	}
 
 	public String getNif() {
 		return Nif;
 	}
 
-	public void setNif(String nif) {
-		Nif = nif;
+	public void setNif(Scanner s) {
+		System.out.println("Escribe el Nif: ");
+		this.Nif = s.nextLine();
 	}
 
 	public int getEdad() {
 		return Edad;
 	}
 
-	public void setEdad(int edad) {
-		Edad = edad;
+	public void setEdad(Scanner s) {
+		System.out.println("Pon tu edad: ");
+		this.Edad = s.nextInt();
 	}
 
 	public boolean isMoroso() {
 		return Moroso;
 	}
 
-	public void setMoroso(boolean moroso) {
-		Moroso = moroso;
+	public void setMoroso(Scanner s) {
+		System.out.println("Introduce morosidad:");
+		String cadena=s.nextLine();
+		this.Moroso = Boolean.parseBoolean(cadena);
 	}
-	
-	
+
+
 	public String toString() {
-		return "Ej10 [getNombre()=" + getNombre() + ", getTelefono()=" + getTelefono() + ", getDireccion()="
-				+ getDireccion() + ", getNif()=" + getNif() + ", getEdad()=" + getEdad()
-				+ "]";
+		return "Ej10 [serialVersionUID=" + serialVersionUID + ", Nombre=" + Nombre + ", Telefono=" + Telefono
+				+ ", Direccion=" + Direccion + ", Nif=" + Nif + ", Edad=" + Edad + ", Moroso=" + Moroso + "]";
 	}
-
-	public static void main(String[] args) throws FileNotFoundException, IOException {
-		//ObjectOutputStream oos = new ObjectOutputStream (new FileOutputStream("ficheros/ventas.dat"));
-		FileOutputStream fos = null;
-        ObjectOutputStream salida = null;
-        Ej10 p;
-        Scanner sc = new Scanner (System.in);
-         try {
-        	 fos = new FileOutputStream ("ficheros\\ventas.dat");
-        	 salida = new ObjectOutputStream (fos);
-        	 System.out.println("Introduzca el dato del cliente");
-        	 
-        	 		System.out.println("Nombre; ");
-        	 		Nombre = sc.next();
-        	 		System.out.println("Telefono: ");
-        	 		Telefono = sc.next();
-        	 		System.out.println("Dirección: ");
-        	 		Direccion = sc.next();
-        	 		System.out.println("NIF: ");
-        	 		Nif = sc.next();
-        	 		System.out.println("Edad: ");
-        	 		Edad = sc.nextInt();
-        	 		Ej10 persona1 = new Ej10 (Nombre, Telefono, Direccion, Nif, Edad);
-        	 		salida.writeObject(persona1);
-        	 		salida.close();
-        	 		fos.close();
-        	 		sc.close();
-        	 		
-        	 
-         }
-         catch (IOException e)  {
-        	 System.out.println(e.getMessage());
-         }
-	}
-
-	
 }
