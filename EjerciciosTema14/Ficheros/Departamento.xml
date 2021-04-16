@@ -1,0 +1,34 @@
+<Departamentos>
+  <lista>
+    <Ejercicio1.Departamento>
+      <NumDepartamento>1</NumDepartamento>
+      <Nombre>Ventas</Nombre>
+      <Localidad>Huesca</Localidad>
+    </Ejercicio1.Departamento>
+    <Ejercicio1.Departamento>
+      <NumDepartamento>2</NumDepartamento>
+      <Nombre>SAT</Nombre>
+      <Localidad>Zaragoza</Localidad>
+    </Ejercicio1.Departamento>
+    <Ejercicio1.Departamento>
+      <NumDepartamento>3</NumDepartamento>
+      <Nombre>Comercial</Nombre>
+      <Localidad>Teruel</Localidad>
+    </Ejercicio1.Departamento>
+    <Ejercicio1.Departamento>
+      <NumDepartamento>4</NumDepartamento>
+      <Nombre>Jefes</Nombre>
+      <Localidad>Lerida</Localidad>
+    </Ejercicio1.Departamento>
+    <Ejercicio1.Departamento>
+      <NumDepartamento>5</NumDepartamento>
+      <Nombre>Electronica</Nombre>
+      <Localidad>Barcelona</Localidad>
+    </Ejercicio1.Departamento>
+    <Ejercicio1.Departamento>
+      <NumDepartamento>6</NumDepartamento>
+      <Nombre>Programacion</Nombre>
+      <Localidad>La Rioja</Localidad>
+    </Ejercicio1.Departamento>
+  </lista>
+</Departamentos>
