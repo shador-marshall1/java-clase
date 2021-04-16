@@ -18,16 +18,16 @@ public class Ej7 {
 			DataOutputStream dataOS=new DataOutputStream(fileout);
 			double numeroAleatorio = numeroAleatorio();
 			String dia [] = {"10 Agosto 2019"};
-<<<<<<< HEAD
+
 			Double temperaturas [] = {,};
-=======
-			Double temperaturas [] = {numeroAleatorio(), numeroAleatorio(), numeroAleatorio()};
->>>>>>> c5a33b004b17423ad3d1f91bcbec2756a6fc2ad5
+
+			Double temperaturas1 [] = {numeroAleatorio(), numeroAleatorio(), numeroAleatorio()};
+
 			for (int i=0; i< dia.length; i++) {
 				dataOS.writeUTF(dia[i]);
 			}
-			for (int i =0; i < temperaturas.length; i++) {
-				dataOS.writeDouble(temperaturas[i]);
+			for (int i =0; i < temperaturas1.length; i++) {
+				dataOS.writeDouble(temperaturas1[i]);
 		
 			}
 			System.out.println(Math.round(numeroAleatorio()) +" "+Math.round(numeroAleatorio()));
