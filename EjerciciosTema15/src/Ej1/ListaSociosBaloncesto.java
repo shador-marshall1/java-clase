@@ -22,8 +22,12 @@ public class ListaSociosBaloncesto {
 			int Edad = rs.getInt("Edad");
 			String Localidad = rs.getString("Localidad");
 			System.out.println(SocioID + "\t" + Nombre + "\t" + Estatura + "\t" + Edad + "\t" + Localidad);
-			System.out.println("El total de filas es: "+rs.getRow());
+			if (rs.isLast()==true) {
+				System.out.println("El total de filas es: "+rs.getRow());
+			
 		}
+			
+		}rs.close();
 
 	}
 
