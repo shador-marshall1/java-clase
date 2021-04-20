@@ -6,7 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/perfiles/dam1alu13/git/java-clase/EjerciciosTema14/Libreria/xstream-1.4.2.jar"/>
-	<classpathentry kind="lib" path="D:/perfiles/dam1alu13/git/java-clase/EjerciciosTema14/Libreria/kxml2-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alejo/Downloads/Compressed/Tema14_Informacion_en_documentos_de_texto-20210416T153416Z-001/Tema14_Informacion_en_documentos_de_texto/Libreria/kxml2-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alejo/Downloads/Compressed/Tema14_Informacion_en_documentos_de_texto-20210416T153416Z-001/Tema14_Informacion_en_documentos_de_texto/Libreria/xstream-1.4.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
