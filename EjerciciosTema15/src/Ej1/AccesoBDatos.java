@@ -14,6 +14,9 @@ public class AccesoBDatos {
 		public void conectar() throws SQLException, ClassNotFoundException {
 			Class.forName(driver);
 			conecta = DriverManager.getConnection(url, username, password);
+			if (conecta != null) {
+				System.out.println("Conexión correcta");
+			}
 		}
 		public void consultaPorLocalidad (String localidad) {
 			try {

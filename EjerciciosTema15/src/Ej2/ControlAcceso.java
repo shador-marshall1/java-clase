@@ -83,7 +83,7 @@ public class ControlAcceso {
 		Image img = new ImageIcon ("Imagenes/candado_cerrado.png").getImage();
 		ImageIcon img2= new ImageIcon(img.getScaledInstance(56, 76, Image.SCALE_SMOOTH));
 		lblImagen.setIcon(img2);
-		//frame.getContentPane().add(lblImagen);
+		frmControlDeAcceso.getContentPane().add(lblImagen);
 	
 	}
 	class Oyente1 implements ActionListener {

@@ -4,6 +4,10 @@ public class Usuarios {
 String username;
 String password;
 String nombre;
+
+public Usuarios() {
+	super();
+}
 public Usuarios(String username, String password, String nombre) {
 	super();
 	this.username = username;
