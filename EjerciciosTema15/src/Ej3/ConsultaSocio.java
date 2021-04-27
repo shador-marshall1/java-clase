@@ -1,14 +1,19 @@
 package Ej3;
 
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class ConsultaSocio {
 
@@ -19,13 +24,14 @@ public class ConsultaSocio {
 	private JTextField EdadTEXT;
 	private JTextField LocalidadTXT;
 	private JTextField buscarText;
-	private JButton btnBuscar;
+	public JButton btnBuscar;
 	private JButton btnSiguiente;
 	private JButton btnAnterior;
 	private ResultSet rst;
-	private AccesoBDatos adb;
-	private int filas=0, posicion=0;;
-	
+	private JLabel mensajeError1;
+//	private AccesoBDatos adb;
+	private static int filas=0, posicion=0;
+
 
 	/**
 	 * Launch the application.
@@ -87,7 +93,7 @@ public class ConsultaSocio {
 		
 		NombreText = new JTextField();
 		NombreText.setEditable(false);
-		NombreText.setBounds(127, 104, 189, 20);
+		NombreText.setBounds(127, 104, 244, 20);
 		frame.getContentPane().add(NombreText);
 		NombreText.setColumns(10);
 		
@@ -105,7 +111,7 @@ public class ConsultaSocio {
 		
 		LocalidadTXT = new JTextField();
 		LocalidadTXT.setEditable(false);
-		LocalidadTXT.setBounds(127, 179, 86, 20);
+		LocalidadTXT.setBounds(127, 179, 171, 20);
 		frame.getContentPane().add(LocalidadTXT);
 		LocalidadTXT.setColumns(10);
 		
@@ -118,6 +124,7 @@ public class ConsultaSocio {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		buscarText = new JTextField();
+		buscarText.setToolTipText("Por Localidad");
 		buscarText.setBounds(350, 30, 86, 20);
 		frame.getContentPane().add(buscarText);
 		buscarText.setColumns(10);
@@ -125,30 +132,166 @@ public class ConsultaSocio {
 		btnAnterior = new JButton("Anterior");
 		btnAnterior.setEnabled(false);
 		btnAnterior.setBounds(191, 250, 89, 23);
-		//btnAnterior.addActionListener(new Oyente1());
+		btnAnterior.addActionListener(new Oyente1());
 		frame.getContentPane().add(btnAnterior);
 		
 		btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.setEnabled(false);
 		btnSiguiente.setBounds(316, 250, 89, 23);
-		//btnSiguiente.addActionListener(new Oyente2());
+		btnSiguiente.addActionListener(new Oyente2());
 		frame.getContentPane().add(btnSiguiente);
+		btnSiguiente.setName("btnSiguiente2");
 		
 		btnBuscar = new JButton("Buscar");
 		btnBuscar.setBounds(350, 61, 89, 23);
-		//btnBuscar.addActionListener(new Oyente3());
+		btnBuscar.addActionListener(new Oyente3());
 		frame.getContentPane().add(btnBuscar);
+		btnBuscar.setName("btnBuscar1");
+		
+		mensajeError1 = new JLabel("");
+		mensajeError1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		mensajeError1.setBounds(56, 284, 219, 32);
+		frame.getContentPane().add(mensajeError1);
 	}
+	/*
+	 * class Oyente3 implements ActionListener {
+	 * 
+	 * public void actionPerformed(ActionEvent arg0) { AccesoBDatos adb = new
+	 * AccesoBDatos(); try { adb.conectar(); } catch (ClassNotFoundException |
+	 * SQLException e2) { e2.printStackTrace(); } //if (arg0.getSource()==btnBuscar)
+	 * { if (!buscarText.getText().isEmpty()) { String
+	 * cadenaSQL="Select * from socio"; String cadenaSQL1 =
+	 * cadenaSQL+" WHERE localidad='"+buscarText.getText()+"'"; rst
+	 * =adb.buscarLocalidad(cadenaSQL1); try { if (rst.next()) {
+	 * 
+	 * int ID1 =rst.getInt("socioID"); Nombre1= rst.getString("nombre"); int
+	 * Estatura1=rst.getInt("estatura"); int Edad1 = rst.getInt("edad"); Localidad1=
+	 * rst.getString("localidad"); ID2=String.valueOf(ID1);
+	 * Estatura2=String.valueOf(Estatura1); Edad2=String.valueOf(Edad1);
+	 * IDTEXT.setText(ID2); NombreText.setText(Nombre1);
+	 * EstaturaText.setText(Estatura2); EdadTEXT.setText(Edad2);
+	 * LocalidadTXT.setText(Localidad1); btnSiguiente.setEnabled(true);
+	 * btnAnterior.setEnabled(true); mensajeError1.setText("");
+	 * if(arg0.getSource()==btnSiguiente) { filas=rst.getRow(); rst.absolute(filas);
+	 * IDTEXT.setText(ID2); NombreText.setText(Nombre1);
+	 * EstaturaText.setText(Estatura2); EdadTEXT.setText(Edad2);
+	 * LocalidadTXT.setText(Localidad1); btnSiguiente.setEnabled(true);
+	 * btnAnterior.setEnabled(true); mensajeError1.setText(""); }
+	 * 
+	 * } if( rst.first()==false) { mensajeError1.setText("La localidad no existe");
+	 * } } catch (SQLException e1) {
+	 * 
+	 * }
+	 * 
+	 * } } } class Oyente2 implements ActionListener {
+	 * 
+	 * public void actionPerformed(ActionEvent e) { try { if (rst.next()) {
+	 * 
+	 * int ID1 =rst.getInt("socioID"); Nombre1= rst.getString("nombre"); int
+	 * Estatura1=rst.getInt("estatura"); int Edad1 = rst.getInt("edad"); Localidad1=
+	 * rst.getString("localidad"); ID2=String.valueOf(ID1);
+	 * Estatura2=String.valueOf(Estatura1); Edad2=String.valueOf(Edad1);
+	 * IDTEXT.setText(ID2); NombreText.setText(Nombre1);
+	 * EstaturaText.setText(Estatura2); EdadTEXT.setText(Edad2);
+	 * LocalidadTXT.setText(Localidad1); btnSiguiente.setEnabled(true);
+	 * btnAnterior.setEnabled(true); mensajeError1.setText("");
+	 * if(e.getSource()==btnSiguiente) { rst.moveToInsertRow();
+	 * System.out.println(rst.getRow()); IDTEXT.setText(ID2);
+	 * NombreText.setText(Nombre1); EstaturaText.setText(Estatura2);
+	 * EdadTEXT.setText(Edad2); LocalidadTXT.setText(Localidad1);
+	 * btnSiguiente.setEnabled(true); btnAnterior.setEnabled(true);
+	 * mensajeError1.setText(""); }
+	 * 
+	 * } if( rst.first()==false) { mensajeError1.setText("La localidad no existe");
+	 * } } catch (SQLException e1) {
+	 * 
+	 * }
+	 * 
+	 * }
+	 * 
+	 * } class Oyente1 implements ActionListener {
+	 * 
+	 * public void actionPerformed(ActionEvent e) { try { if (rst.previous()) {
+	 * 
+	 * int ID1 =rst.getInt("socioID"); Nombre1= rst.getString("nombre"); int
+	 * Estatura1=rst.getInt("estatura"); int Edad1 = rst.getInt("edad"); Localidad1=
+	 * rst.getString("localidad"); ID2=String.valueOf(ID1);
+	 * Estatura2=String.valueOf(Estatura1); Edad2=String.valueOf(Edad1);
+	 * IDTEXT.setText(ID2); NombreText.setText(Nombre1);
+	 * EstaturaText.setText(Estatura2); EdadTEXT.setText(Edad2);
+	 * LocalidadTXT.setText(Localidad1); btnSiguiente.setEnabled(true);
+	 * btnAnterior.setEnabled(true); mensajeError1.setText("");
+	 * 
+	 * 
+	 * }
+	 * 
+	 * if( rst.first()==false) { mensajeError1.setText("La localidad no existe"); }
+	 * } catch (SQLException e1) {
+	 * 
+	 * }
+	 * 
+	 * }
+	 * 
+	 * }
+	 */
+ArrayList<Socio>list = new ArrayList<Socio>();
+class Oyente3 implements ActionListener {
+	
+	AccesoBDatos adb = new AccesoBDatos();
 
-		public void actionPerformed(ActionEvent e) {
-			
-			if (e.getSource()==btnBuscar) {
-				String cadenaSQL="Select * from socio";
-				if (!buscarText.getText().isEmpty()) {
-					cadenaSQL = cadenaSQL+"WHERE localidad='"+buscarText.getText()+"'";
-					
-				}
+	public void actionPerformed(ActionEvent e) {
+		try {
+			adb.conectar();
+		} catch (ClassNotFoundException e1) {e1.printStackTrace();
+		} catch (SQLException e1) {e1.printStackTrace();}
+		if (!buscarText.getText().isEmpty()) { 
+			String cadenaSQL="Select * from socio"; 
+			String cadenaSQL1 =cadenaSQL+" WHERE localidad='"+buscarText.getText()+"'"; 
+			 rst=adb.buscarLocalidad(cadenaSQL1); 
+			 try {
+				while (rst.next()) {
+					 list.add(new Socio(rst.getInt(1), rst.getString(2), rst.getInt(3), rst.getInt(4), rst.getString(5)));
+					 String ID1= String.valueOf(rst.getInt(1));
+					 String Esta1=String.valueOf(rst.getInt(3));
+					 String Edad1=String.valueOf(rst.getInt(4));
+					 IDTEXT.setText(ID1);
+					 NombreText.setText(rst.getString(2));
+					 EstaturaText.setText(Esta1);
+					 EdadTEXT.setText(Edad1);
+					 LocalidadTXT.setText(rst.getString(5));
+					 btnAnterior.setEnabled(true);
+					 btnSiguiente.setEnabled(true);
+					 posicion = 0;
+				 }
+			} catch (SQLException e1) {
+				e1.printStackTrace();
 			}
-			
 		}
+	}
+	
+}
+class Oyente2 implements ActionListener {
+
+	public void actionPerformed(ActionEvent e) {
+	posicion++;
+	IDTEXT.setText(String.valueOf(list.get(posicion).getSocioID()));
+	NombreText.setText(list.get(posicion).getNombre());
+	EstaturaText.setText(String.valueOf(list.get(posicion).getEstatura()));
+	EdadTEXT.setText(String.valueOf(list.get(posicion).getEdad()));
+	LocalidadTXT.setText(list.get(posicion).getLocalidad());
+	}
+	
+}
+class Oyente1 implements ActionListener {
+
+	public void actionPerformed(ActionEvent e) {
+	posicion--;
+	IDTEXT.setText(String.valueOf(list.get(posicion).getSocioID()));
+	NombreText.setText(list.get(posicion).getNombre());
+	EstaturaText.setText(String.valueOf(list.get(posicion).getEstatura()));
+	EdadTEXT.setText(String.valueOf(list.get(posicion).getEdad()));
+	LocalidadTXT.setText(list.get(posicion).getLocalidad());
+	}
+	
+}
 }

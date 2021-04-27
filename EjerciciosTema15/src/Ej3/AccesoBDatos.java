@@ -17,16 +17,18 @@ public class AccesoBDatos {
     public Connection conecta;
     public ResultSet rst2;
 
-	public void conectar() throws SQLException, ClassNotFoundException {
-		Class.forName(driver);
-		conecta = DriverManager.getConnection(url, username, password);
+	public void conectar() throws ClassNotFoundException, SQLException {
+
+			Class.forName(driver);
+			conecta = DriverManager.getConnection(url, username, password);
 	}
 	public ResultSet buscarLocalidad(String localidad) {
 		Statement smt;
 		try {
-			smt = conecta.createStatement();
+			smt = conecta.createStatement(ResultSet.CONCUR_UPDATABLE, ResultSet.TYPE_SCROLL_INSENSITIVE);
 			return (smt.executeQuery(localidad));
 		} catch (Exception e) {
+			e.printStackTrace();
 			return null;
 		}
 	
