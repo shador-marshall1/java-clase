@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class AccesoBDatos {
 	private static String driver = "com.mysql.cj.jdbc.Driver";
@@ -19,5 +20,15 @@ public class AccesoBDatos {
 	public void conectar() throws SQLException, ClassNotFoundException {
 		Class.forName(driver);
 		conecta = DriverManager.getConnection(url, username, password);
+	}
+	public ResultSet buscarLocalidad(String localidad) {
+		Statement smt;
+		try {
+			smt = conecta.createStatement();
+			return (smt.executeQuery(localidad));
+		} catch (Exception e) {
+			return null;
+		}
+	
 	}
 }
