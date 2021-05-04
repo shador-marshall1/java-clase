@@ -60,7 +60,7 @@ public class ControlAcceso {
 		Usuariolbl.setBounds(27, 46, 46, 14);
 		frmControlDeAcceso.getContentPane().add(Usuariolbl);
 		
-		JLabel Contraseñalbl = new JLabel("Contrase\u00F1a: ");
+		JLabel Contraseñalbl = new JLabel("Contraseña: ");
 		Contraseñalbl.setBounds(27, 71, 70, 14);
 		frmControlDeAcceso.getContentPane().add(Contraseñalbl);
 		

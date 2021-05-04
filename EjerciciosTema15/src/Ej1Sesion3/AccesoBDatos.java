@@ -92,5 +92,9 @@ public class AccesoBDatos {
 		}
 		return 1;
 	}
+	public int actualizarSalario (int departamento, double porcentaje) throws SQLException {
+		PreparedStatement ps = conecta.prepareStatement("update ");
+		return 1;
+	}
 	
 }

@@ -25,7 +25,7 @@ public class MainPrueba {
 		sqlFecha1 = new java.sql.Date(fecha1.getTime()); } 
 		catch (ParseException e)
 		{ System.out.println("Error al convertir fecha"); }
-		Empleado e1 = new Empleado(1, "CARRERA", "PROFESOR", 7788, sqlFecha1, 700.0, 0.0, 20);
+		Empleado e1 = new Empleado(1, "CARRERA", "PROFESOR", 7788, sqlFecha1, 700.00, 0.00, 20);
 		System.out.println(adb.insertarconBean(e1)); // 1 (y se inserta en la tabla) //Repito la misma instrucción: 
 		System.out.println(adb.insertarconBean(e1));
 		adb.desconectar();
