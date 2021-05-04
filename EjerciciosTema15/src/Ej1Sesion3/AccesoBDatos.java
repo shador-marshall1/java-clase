@@ -13,6 +13,7 @@ public class AccesoBDatos {
     private static String username = "root";
     private static String password = "root";
     private Connection conecta;
+    private Empleado emp1;
 	
 	public void conectar() throws SQLException, ClassNotFoundException {
 		Class.forName(driver);
@@ -26,8 +27,16 @@ public class AccesoBDatos {
 	public Empleado BuscarPorCodigo (int numero) throws SQLException {
 		PreparedStatement ps = conecta.prepareStatement("select * from emp where EMPNO =?");
 		ps.setInt(1, numero);
-		ResultSet rst = ps.executeQuery();
-		return (Empleado) rst;
+		ResultSet rst1 = ps.executeQuery();
+		if (rst1.next()) {
+			emp1 =new Empleado(rst1.getInt(1), rst1.getString(2), rst1.getString(3), rst1.getInt(4), 
+						rst1.getDate(5), rst1.getDouble(6), rst1.getDouble(7), rst1.getInt(8));
+			
+		}else {
+			return null;
+		}
+		return emp1;
+		
 	}
 	public ArrayList<Empleado> busquedaporOficio (String oficio) {
 		ArrayList<Empleado>list = new ArrayList<Empleado>();
@@ -62,6 +71,26 @@ public class AccesoBDatos {
 			return null;
 		}
 		return list;
+	}
+	public int insertarconBean (Empleado emp)  {
+		Empleado emp1 = new Empleado();
+		PreparedStatement ps;
+		try {
+			ps = conecta.prepareStatement("insert into emp values (?, ?, ?, ?, ?, ?, ?, ?)");
+		
+		ps.setInt(1, emp1.getDEPTNO());
+		ps.setString(2, emp1.getENAME());
+		ps.setString(3, emp1.getJOB());
+		ps.setInt(4, emp1.getMGR());
+		ps.setDate(5, emp1.getHiredate());
+		ps.setDouble(6, emp1.getSAL());
+		ps.setDouble(7, emp1.getCOMM());
+		ps.setInt(8, emp1.getDEPTNO());
+		ResultSet rst = ps.executeQuery();
+		} catch (SQLException e) {
+			System.out.println("Ya existe alguien con ese nombre");
+		}
+		return 1;
 	}
 	
 }
