@@ -3,14 +3,14 @@ package Ej1Sesion3;
 import java.sql.*;
 
 public class Empleado {
-int EMPNO;
-String ENAME;
-String JOB;
-int MGR;
-Date Hiredate;
-Double SAL;
-Double COMM;
-int DEPTNO;
+private int EMPNO;
+private String ENAME;
+private String JOB;
+private int MGR;
+private Date Hiredate;
+private Double SAL=0.00;
+private Double COMM=0.00;
+private int DEPTNO;
 public Empleado() {
 	super();
 }

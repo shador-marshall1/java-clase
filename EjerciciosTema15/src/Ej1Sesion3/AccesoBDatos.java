@@ -72,24 +72,26 @@ public class AccesoBDatos {
 		}
 		return list;
 	}
-	public int insertarconBean (Empleado emp)  {
-		Empleado emp1 = new Empleado();
+	public int insertarconBean (Empleado emp2)  {
+		emp2 = new Empleado();
 		PreparedStatement ps;
 		try {
-			ps = conecta.prepareStatement("insert into emp values (?, ?, ?, ?, ?, ?, ?, ?)");
+			ps = conecta.prepareStatement("insert into emp(EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) values (?, ?, ?, ?, ?, ?, ?, ?);");
 		
-		ps.setInt(1, emp1.getDEPTNO());
-		ps.setString(2, emp1.getENAME());
-		ps.setString(3, emp1.getJOB());
-		ps.setInt(4, emp1.getMGR());
-		ps.setDate(5, emp1.getHiredate());
-		ps.setDouble(6, emp1.getSAL());
-		ps.setDouble(7, emp1.getCOMM());
-		ps.setInt(8, emp1.getDEPTNO());
-		ResultSet rst = ps.executeQuery();
+		ps.setInt(1, emp2.getEMPNO());
+		ps.setString(2, emp2.getENAME());
+		ps.setString(3, emp2.getJOB());
+		ps.setInt(4, emp2.getMGR());
+		ps.setDate(5, emp2.getHiredate());
+		ps.setDouble(6, emp2.getSAL());
+		ps.setDouble(7, emp2.getCOMM());
+		ps.setInt(8, emp2.getDEPTNO());
+		ps.execute();
 		} catch (SQLException e) {
-			System.out.println("Ya existe alguien con ese nombre");
+			//System.out.println("Ya existe alguien con ese nombre");
+			e.printStackTrace();
 		}
+
 		return 1;
 	}
 	public int actualizarSalario (int departamento, double porcentaje) throws SQLException {
