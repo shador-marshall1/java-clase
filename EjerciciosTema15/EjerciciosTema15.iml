@@ -14,8 +14,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Imagenes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="JavaSE-15" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="ConectorSQLJ" level="project" />
     <orderEntry type="module-library">
       <library name="mysql-connector-java-8.0.18.jar">
