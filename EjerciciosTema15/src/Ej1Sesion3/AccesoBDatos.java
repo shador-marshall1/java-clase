@@ -73,10 +73,10 @@ public class AccesoBDatos {
 		return list;
 	}
 	public int insertarconBean (Empleado emp2)  {
-		emp2 = new Empleado();
-		PreparedStatement ps;
 		try {
-			ps = conecta.prepareStatement("insert into emp(EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) values (?, ?, ?, ?, ?, ?, ?, ?);");
+			conectar();
+			PreparedStatement ps;
+			ps = conecta.prepareStatement("insert into EMP values (?, ?, ?, ?, ?, ?, ?, ?)");
 		
 		ps.setInt(1, emp2.getEMPNO());
 		ps.setString(2, emp2.getENAME());
@@ -86,13 +86,13 @@ public class AccesoBDatos {
 		ps.setDouble(6, emp2.getSAL());
 		ps.setDouble(7, emp2.getCOMM());
 		ps.setInt(8, emp2.getDEPTNO());
-		ps.execute();
-		} catch (SQLException e) {
+		return ps.executeUpdate();
+		} catch (SQLException | ClassNotFoundException e) {
 			//System.out.println("Ya existe alguien con ese nombre");
 			e.printStackTrace();
+			return 0;
 		}
 
-		return 1;
 	}
 	public int actualizarSalario (int departamento, double porcentaje) throws SQLException {
 		PreparedStatement ps = conecta.prepareStatement("update ");
