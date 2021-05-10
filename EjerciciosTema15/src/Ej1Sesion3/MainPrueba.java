@@ -3,10 +3,10 @@ package Ej1Sesion3;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 
-public class MainPrueba {
+//public class MainPrueba {
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-
+	//public static void main(String[] args) throws ClassNotFoundException, SQLException {
+/*
 	}		AccesoBDatos adb = new AccesoBDatos();
 		adb.conectar();
 		System.out.println(adb.busquedaporOficio("CLERK"));
@@ -33,4 +33,4 @@ public class MainPrueba {
 		adb.desconectar();
 
 
-}
+}*/
