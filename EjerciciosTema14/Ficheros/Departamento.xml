@@ -1,4 +1,4 @@
-<Departamentos>
+<Departamento>
   <lista>
     <Ejercicio1.Departamento>
       <NumDepartamento>1</NumDepartamento>
@@ -31,4 +31,4 @@
       <Localidad>La Rioja</Localidad>
     </Ejercicio1.Departamento>
   </lista>
-</Departamentos>
+</Departamento>

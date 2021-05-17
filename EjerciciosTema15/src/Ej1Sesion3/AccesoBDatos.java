@@ -8,8 +8,7 @@ public class AccesoBDatos {
     private static String database = "demodb";
     private static String hostname = "localhost";
     private static String port = "3306";
-	private static String url = "jdbc:mysql://" + hostname + ":" + port + "/" + database +
-									"?serverTimezone=Europe/Madrid";
+	private static String url = "jdbc:mysql://" + hostname + ":" + port + "/" + database +"?serverTimezone=Europe/Madrid";
     private static String username = "root";
     private static String password = "root";
     private Connection conecta;
